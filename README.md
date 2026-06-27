@@ -7,9 +7,9 @@ Firebase認証を利用したSNSアプリです。
 ## 使用技術
 
 ### Frontend
-- Nuxt3
+- Nuxt 4
 - TypeScript
-- Vue3
+- Vue 3
 - VeeValidate
 - Firebase Authentication
 
@@ -36,7 +36,8 @@ Firebase認証を利用したSNSアプリです。
 - いいね追加
 - いいね解除
 
-```md
+## ER図
+![ER図](docs/ER.png)
 
 ## 環境構築
 ### Backend
@@ -60,4 +61,3 @@ Firebase Authentication を使用しています。
 ### GitHub
 https://github.com/mihonitou/laravel-nuxt-sns2
 
-```
