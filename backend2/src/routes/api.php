@@ -34,8 +34,6 @@ Route::get('/posts', [PostController::class, 'index']); // ←追加
 
 Route::post('/me', [FirebaseLoginController::class, 'me']); // ←外す
 
-Route::post('/register-name', [FirebaseLoginController::class, 'registerName']);
-
 Route::post('/posts', [PostController::class, 'store']);
 
 Route::delete('/posts/{id}', [PostController::class, 'destroy']);

@@ -122,7 +122,7 @@ onMounted(async () => {
 
 <template>
   <div class="page">
-    <SideNav :showPost="false" />
+    <SideNav />
 
     <div class="content">
       <h2 class="title">投稿詳細</h2>

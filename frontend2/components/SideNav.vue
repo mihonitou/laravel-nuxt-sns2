@@ -89,12 +89,14 @@ const { value: content, errorMessage } = useField<string>('content')
 
 const emit = defineEmits(['posted'])
 
+/*
 const props = defineProps({
   showPost: {
     type: Boolean,
     default: true
   }
 })
+*/
 
 const sharePost = handleSubmit(async () => {
   console.log('🔥 投稿時user', user.value)

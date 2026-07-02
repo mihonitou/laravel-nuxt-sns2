@@ -1,10 +1,12 @@
 # Laravel Nuxt SNS
 
 ## アプリ概要
-
 Firebase認証を利用したSNSアプリです。
 
-## 使用技術
+## 作成した目的
+Firebase Authentication を利用した認証機能と、Laravel API・Nuxt を組み合わせたSPA開発を学習するために作成しました。
+
+## 使用技術（実行環境）
 
 ### Frontend
 - Nuxt 4
@@ -22,7 +24,6 @@ Firebase認証を利用したSNSアプリです。
 - Docker
 
 ## 主な機能
-
 - ユーザー登録
 - ログイン
 - ログアウト
@@ -35,6 +36,10 @@ Firebase認証を利用したSNSアプリです。
 - コメント表示
 - いいね追加
 - いいね解除
+
+## テーブル設計
+![テーブル設計1](docs/table1.png)
+![テーブル設計2](docs/table2.png)
 
 ## ER図
 ![ER図](docs/ER.png)
