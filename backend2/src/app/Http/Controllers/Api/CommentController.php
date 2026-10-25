@@ -25,27 +25,7 @@ class CommentController extends Controller
             'content' => 'required|string',
         ]);
 
-        $idToken = $request->bearerToken();
-
-        if (!$idToken) {
-            return response()->json(['message' => 'No token'], 401);
-        }
-
-        $factory = (new \Kreait\Firebase\Factory)
-            ->withServiceAccount('/var/www/storage/app/firebase/serviceAccountKey.json')
-            ->withProjectId('laravel-nuxt-sns2');
-
-        $auth = $factory->createAuth();
-
-        $verifiedIdToken = $auth->verifyIdToken($idToken);
-
-        $uid = $verifiedIdToken->claims()->get('sub');
-
-        $user = User::where('firebase_uid', $uid)->first();
-
-        if (!$user) {
-            return response()->json(['message' => 'Unauthorized'], 401);
-        }
+        $user = $request->get('auth_user');
 
         $comment = Comment::create([
             'user_id' => $user->id,

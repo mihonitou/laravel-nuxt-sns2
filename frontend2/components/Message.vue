@@ -124,7 +124,7 @@ const onLike = async () => {
         },
         body: JSON.stringify({
           post_id: id,
-          user_id: user.value.id
+
         })
       })
 
@@ -139,7 +139,7 @@ const onLike = async () => {
         },
         body: JSON.stringify({
           post_id: id,
-          user_id: user.value.id
+
         })
       })
 

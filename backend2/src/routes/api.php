@@ -34,16 +34,16 @@ Route::get('/posts', [PostController::class, 'index']); // ←追加
 
 Route::post('/me', [FirebaseLoginController::class, 'me']); // ←外す
 
-Route::post('/posts', [PostController::class, 'store']);
+Route::post('/posts', [PostController::class, 'store'])->middleware(\App\Http\Middleware\FirebaseAuth::class);
 
-Route::delete('/posts/{id}', [PostController::class, 'destroy']);
+Route::delete('/posts/{id}', [PostController::class, 'destroy'])->middleware(\App\Http\Middleware\FirebaseAuth::class);
 
 // ★ 先にcomments
 Route::get('/posts/{postId}/comments', [CommentController::class, 'index']);
-Route::post('/posts/{postId}/comments', [CommentController::class, 'store']);
+Route::post('/posts/{postId}/comments', [CommentController::class, 'store'])->middleware(\App\Http\Middleware\FirebaseAuth::class);
 
 // ★ 後に詳細
 Route::get('/posts/{id}', [PostController::class, 'show']);
 
-Route::post('/likes', [LikeController::class, 'store']);
-Route::delete('/likes', [LikeController::class, 'destroy']);
+Route::post('/likes', [LikeController::class, 'store'])->middleware(\App\Http\Middleware\FirebaseAuth::class);
+Route::delete('/likes', [LikeController::class, 'destroy'])->middleware(\App\Http\Middleware\FirebaseAuth::class);
